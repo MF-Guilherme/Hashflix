@@ -11,6 +11,7 @@ LISTA_CATEGORIAS = (
     ("OUTROS", "Outros")
 )
 
+
 # Criar o filme
 class Filme(models.Model):
     titulo = models.CharField(max_length=100)
@@ -20,4 +21,6 @@ class Filme(models.Model):
     visualizacoes = models.IntegerField(default=0) 
     data_criacao = models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+        return self.titulo
 # Criar os episódios
